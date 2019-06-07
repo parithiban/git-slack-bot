@@ -28,7 +28,7 @@ make all
 #### Activate your virtual environment
 
 ```bash
-source env/bin/activate
+source venv/bin/activate
 ```
 
 #### Setup Environment Variable
