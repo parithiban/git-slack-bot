@@ -1,12 +1,5 @@
 .PHONY: clean system-packages python-packages install run all
 
-# FLASK_APP := manage.py
-# export FLASK_APP
-
-# HAI=HELLO
-
-
-
 clean:
 	find . -type f -name '*.pyc' -delete
 	find . -type f -name '*.log' -delete
