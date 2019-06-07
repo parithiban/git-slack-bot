@@ -62,6 +62,19 @@ To monitor the queue
 
 https://api.slack.com/slash-commands#creating_commands
 
+#### List of Permission for bot to access
+
+Once you have installed it in your slack workspace you need to give below scope access
+
+```
+channels:read
+chat:write:bot
+chat:write:user
+im:read
+users:read
+users.profile:read
+```
+
 #### Check it live
 
 Run the command
