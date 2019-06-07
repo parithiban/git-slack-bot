@@ -1,0 +1,15 @@
+# vscode
+.idea
+
+#DS_Store
+.DS_Store
+
+#env
+.env
+
+# virtual env
+venv
+
+# Python Cache
+*.pyc
+*pycache*
