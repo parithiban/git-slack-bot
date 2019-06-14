@@ -26,9 +26,4 @@ run-queue:
 run:
 	python manage.py
 
-GO:
-	export HAI=HELLO; \
-	echo $$HAI
-
-
 all: clean install
