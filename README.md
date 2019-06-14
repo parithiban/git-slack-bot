@@ -1,5 +1,16 @@
 # Git Slack Bot
 
+[![Pull-Requests](https://img.shields.io/github/issues-pr/parithiban/git-slack-bot.svg?color=blue&style=plastic)](https://github.com/parithiban/git-slack-bot/pulls/)
+[![Issues](https://img.shields.io/github/issues-raw/parithiban/git-slack-bot.svg?style=plastic)](https://github.com/parithiban/git-slack-bot/issues)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/parithiban/git-slack-bot.svg?style=plastic&color=blue)](https://GitHub.com/parithiban/git-slack-bot/graphs/contributors/)
+![Last Commit](https://img.shields.io/github/last-commit/parithiban/git-slack-bot.svg?style=plastic)
+
+[![GitHub forks](https://img.shields.io/github/forks/parithiban/git-slack-bot.svg?style=social)](https://github.com/parithiban/git-slack-bot/network/)
+[![GitHub stars](https://img.shields.io/github/stars/parithiban/git-slack-bot.svg?style=social)](https://github.com/parithiban/git-slack-bot/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/parithiban/git-slack-bot.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/parithiban/git-slack-bot/watchers/)
+[![GitHub followers](https://img.shields.io/github/followers/parithiban.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/parithiban?tab=followers)
+
 This is a slack bot that is integrated with git to post some awesome notifications in slack
 
 ## Requirements
