@@ -17,9 +17,6 @@ venv/bin/activate:
 
 install: system-packages
 
-print:
-	@echo export MYVAR=$(FLASK_APP):otherstuff ";"
-
 run-queue:
 	flask rq worker
 
