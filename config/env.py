@@ -13,7 +13,7 @@ class EnvConfig(object):
         'pr',
     ]
     HELP_MESSAGE = "Available Commands: \n \
-`/git pr crm` to get the open pull request of the speific repo \n \
+`/git pr git-slack-bot` to get the open pull request of the speific repo \n \
 `/git pr-report` to get pull request report of the entire organisation \n \
 `/git issues-report` to get issue report of the entire organisation \n \
 `/git missing-profile-name` to get the list of users who have not filled in their profile name"
