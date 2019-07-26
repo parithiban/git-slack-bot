@@ -13,3 +13,4 @@ venv
 
 #environment
 .env
+deploy.txt

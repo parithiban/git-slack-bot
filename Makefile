@@ -18,6 +18,7 @@ venv/bin/activate:
 install: system-packages
 
 run-queue:
+	export FLASK_APP=manage.py
 	flask rq worker
 
 run:

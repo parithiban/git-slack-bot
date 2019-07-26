@@ -3,6 +3,9 @@ from collections import OrderedDict
 from config import get_env
 from flask import current_app as app
 from operator import itemgetter
+import datetime
+import csv
+import os
 
 
 class GitApi(object):
@@ -121,3 +124,33 @@ class GitApi(object):
         if len(users) == 0:
             return False
         return users
+
+    def get_users_in_organisation(self):
+        organisation = get_env('ORGANISATION')
+        members = self.git_instance.get_organization(organisation).get_members()
+        dir_path = os.path.dirname(os.path.realpath(__file__)) + "/../storage"
+        users = []
+        none = []
+        for member in members:
+            print(member.name)
+            if member.name is not None:
+                users.append([member.name, member.login, member.html_url])
+            else:
+                none.append([member.name, member.login, member.html_url])
+
+        sorted = users.sort(key=lambda x: x[0])
+        users.insert(0, ["User Name", "Login User", "Profile Link"])
+        file_name = dir_path + "/git_users_" + \
+            str(datetime.datetime.now()) + ".csv"
+        result = users + none
+        self.write_data_to_file(file_name, result)
+        if len(users) == 0:
+            return False
+        return file_name
+
+    def write_data_to_file(self, filename, csvData):
+        with open(filename, 'w') as csvFile:
+            writer = csv.writer(csvFile)
+            writer.writerows(csvData)
+
+            csvFile.close()

@@ -48,3 +48,8 @@ class RunCommand:
                     "response_type": "in_channel",
                     'text': app.config['INVALID_COMMAND_MESSAGE']
                 }
+
+        if command_text[0] == 'get-users-list':
+            action = Actions()
+
+            return action.get_users_in_organisation(request)

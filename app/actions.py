@@ -5,6 +5,7 @@ from app.worker import (
     pull_request_of_given_repo,
     github_users_without_profile_name,
     github_pull_request_report,
+    get_users_in_organisation,
     github_issue_report
 )
 
@@ -74,6 +75,20 @@ class Actions:
         }
 
         github_issue_report.queue(data)
+
+        return {
+            "response_type": "in_channel",
+            'text': app.config['IMMEDIATE_RESPONSE']
+        }
+
+    def get_users_in_organisation(self, request):
+        data = {
+            'channel_id': request.form.get('channel_id'),
+            'user_id': request.form.get('user_id'),
+            'response_url': request.form.get('response_url')
+        }
+
+        get_users_in_organisation.queue(data, timeout=60 * 7)
 
         return {
             "response_type": "in_channel",

@@ -116,6 +116,27 @@ def github_issue_report(args):
         __slack_helper.send_message(exception, args['response_url'])
 
 
+@rq.job
+def get_users_in_organisation(args):
+    try:
+        result = __git_helper.get_users_in_organisation()
+
+        if not result:
+            message = app.config['NO_USERS_IN_ORGANISATION']
+            __slack_helper.send_message(message, args['response_url'])
+        else:
+            n = 30
+            message = "Hello <@" + args['user_id'] + "> \n"
+            __slack_helper.send_as_attachment(
+                result, args['channel_id'])
+    except Exception as e:
+        print("exception handling")
+        print(e)
+        exception = "Hello <@" + args['user_id'] + \
+            "> there is a problem  with your request. Please contact the administrator"
+        __slack_helper.send_message(exception, args['response_url'])
+
+
 def chunk_list_group(input, n):
     return [input[i * n: (i + 1) * n]
             for i in range((len(input) + n - 1) // n)]
