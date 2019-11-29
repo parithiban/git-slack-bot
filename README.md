@@ -107,3 +107,5 @@ Ex: ![Alt text](assests/help_command.png?raw=true "help_command")
 Run `/git pr your_repo`
 
 Ex: ![Alt text](assests/output.png?raw=true "output")
+
+Test PR
